@@ -1,0 +1,164 @@
+/* --- RESET & GLOBAL --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.hidden { display: none !important; }
+
+/* Tombol Back Home */
+#btn-back-home {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    padding: 10px 15px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- HOME PAGE STYLE --- */
+#home { text-align: center; padding-top: 50px; }
+#home h1 { color: #2c3e50; font-size: 2.8em; margin-bottom: 10px; }
+#home p { font-size: 1.2em; color: #555; }
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.menu-btn:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
+
+.gizi { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.word { background: linear-gradient(135deg, #3498db, #2980b9); }
+.presentasi { background: linear-gradient(135deg, #27ae60, #16a085); }
+.kalkulator { background: linear-gradient(135deg, #f1c40f, #f39c12); color: #2c3e50; }
+
+/* --- CEK GIZI STYLE --- */
+.section-gizi {
+    max-width: 400px;
+    margin: 80px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.form-group { margin-bottom: 15px; text-align: left; }
+.form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+.section-gizi button { width: 100%; padding: 10px; background: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+.result-box { margin-top: 20px; font-weight: bold; line-height: 1.5; }
+
+/* --- ARTIKEL WORD STYLE (FORMAT DOKUMEN) --- */
+.section-artikel { padding: 50px 20px; display: flex; justify-content: center; }
+
+.kertas-word {
+    background: white;
+    width: 100%;
+    max-width: 800px;
+    min-height: 800px;
+    padding: 60px 80px; /* Padding A4 */
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    font-family: 'Times New Roman', Times, serif; /* Font Wajib Word */
+    color: black;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Format Paragraf Rata Kanan-Kiri & Menjorok */
+.kertas-word p {
+    text-align: justify;
+    text-indent: 50px;
+    margin-bottom: 15px;
+}
+
+/* Format List di dalam Word */
+.list-menu { text-align: left; margin-left: 20px; }
+.list-menu li { margin-bottom: 15px; }
+.list-menu ul { margin-top: 5px; list-style-type: disc; margin-left: 20px; }
+
+/* --- GALERI MAKANAN STYLE --- */
+.section-presentasi header { background: #27ae60; color: white; padding: 30px 20px; text-align: center; }
+.pres-nav { background: #2ecc71; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 10; }
+.pres-nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+
+.section-presentasi section { padding: 30px; max-width: 900px; margin: 30px auto; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.section-presentasi footer { text-align: center; padding: 20px; background: #27ae60; color: white; margin-top: 40px; }
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.food-card {
+    background: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.food-card:hover { transform: scale(1.05); box-shadow: 0 8px 12px rgba(0,0,0,0.15); }
+.food-card img { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; border: 3px solid #eee; }
+.food-card span { font-weight: bold; color: #333; font-size: 15px; }
+
+/* --- MODAL / POPUP STYLE --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); z-index: 2000;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.modal-content {
+    background: white; padding: 30px; border-radius: 15px;
+    width: 90%; max-width: 500px; position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center; animation: popUp 0.3s ease-out;
+}
+@keyframes popUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.close-btn { position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; color: #aaa; }
+.close-btn:hover { color: red; }
+#modal-body p { font-size: 16px; line-height: 1.6; text-align: left; background: #f9f9f9; padding: 15px; border-radius: 10px; border-left: 5px solid #27ae60; }
+
+/* --- CALCULATOR STYLE --- */
+.section-kalkulator { max-width: 320px; margin: 80px auto; background: #2c3e50; padding: 20px; border-radius: 15px; }
+#calc-display { width: 100%; height: 60px; font-size: 28px; text-align: right; margin-bottom: 15px; padding: 10px; border-radius: 5px; border: none; background: #ecf0f1; }
+.calc-keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.calc-keys button { padding: 15px; font-size: 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+.calc-keys .operator { background: #f39c12; color: white; }
+.calc-keys .equal { background: #27ae60; color: white; grid-column: span 2; }
+.calc-keys .clear { background: #c0392b; color: white; grid-column: span 2; }

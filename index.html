@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukan Asal Kenyang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="btn-back-home" class="hidden" onclick="showSection('home')">🏠 Kembali ke Dashboard</button>
+
+    <div id="home" class="container">
+        <h1>Bukan Asal Kenyang</h1>
+        <p>Silakan pilih menu di bawah ini:</p>
+        <div class="menu-grid">
+            
+            <button onclick="showSection('cek-gizi')" class="menu-btn gizi">
+                🍎 Cek Status Gizi (BMI)
+            </button>
+            
+            <button onclick="showSection('artikel-word')" class="menu-btn word">
+                📝 Baca Artikel (Word)
+            </button>
+
+            <button onclick="showSection('presentasi')" class="menu-btn presentasi">
+                🍽️ Galeri Gizi Makanan
+            </button>
+            
+            <button onclick="showSection('kalkulator')" class="menu-btn kalkulator">
+                🧮 Kalkulator
+            </button>
+
+        </div>
+    </div>
+
+    <div id="cek-gizi" class="container hidden section-gizi">
+        <h2>Cek Status Gizi (BMI)</h2>
+        <div class="form-group">
+            <label>Berat Badan (kg):</label>
+            <input type="number" id="berat" placeholder="Contoh: 50">
+        </div>
+        <div class="form-group">
+            <label>Tinggi Badan (cm):</label>
+            <input type="number" id="tinggi" placeholder="Contoh: 160">
+        </div>
+        <button onclick="hitungBMI()">Cek Hasil</button>
+        <div id="hasil-bmi" class="result-box"></div>
+    </div>
+
+    <div id="artikel-word" class="container hidden section-artikel">
+        <div class="kertas-word">
+            <h1 style="text-align: center; color: black; margin-bottom: 5px; text-transform: uppercase;">Bukan Asal Kenyang</h1>
+            <p style="text-align: center; font-style: italic; color: #555; text-indent: 0 !important; margin-bottom: 5px;">
+                Oleh: Admin PJOK | Topik: Gizi Remaja
+            </p>
+            <hr style="border: 1px solid #000; margin-bottom: 30px;">
+            
+            <p>
+                Di zaman sekarang, banyak anak remaja yang jarang mengonsumsi sayur, buah-buahan, dan makanan sehat. 
+                Hal ini disebabkan oleh berbagai alasan, seperti rasa sayur yang kurang disukai dan lebih tertarik pada makanan cepat saji. 
+                Kebiasaan tersebut dapat berdampak buruk bagi kesehatan tubuh dalam jangka panjang. 
+                Kurangnya asupan sayur membuat tubuh kekurangan vitamin dan serat yang penting. 
+                Oleh karena itu, penting untuk meningkatkan kesadaran remaja akan pentingnya mengonsumsi makanan sehat sejak dini.
+            </p>
+            
+            <p>
+                Konsumsi sayur dan buah di kalangan remaja Indonesia masih tergolong rendah, berada di bawah angka minimal 400-600 gram per hari yang direkomendasikan WHO. 
+                Survei Kesehatan Indonesia 2023 menunjukkan bahwa sebagian besar masyarakat Indonesia, termasuk remaja, hanya mengonsumsi 1-2 porsi buah dan sayur per hari dalam seminggu. 
+                Secara umum, konsumsi harian buah dan sayur di Indonesia masih jauh dari ideal, yaitu hanya sekitar 57,1 gram untuk buah dan 33,5 gram untuk sayur, dibandingkan dengan rekomendasi 400 gram per hari. 
+                Kondisi ini dapat berdampak pada kekurangan vitamin dan serat, meningkatkan risiko penyakit kronis di kemudian hari. 
+                Oleh karena itu, diperlukan upaya peningkatan kesadaran akan pentingnya gizi seimbang, edukasi tentang manfaat sayur dan buah, serta penyediaan akses yang lebih mudah dan terjangkau terhadap makanan sehat, termasuk promosi pola makan B2SA (Bergizi, Berimbang, Sehat, dan Aman) untuk mengoptimalkan gizi remaja.
+            </p>
+
+            <p style="font-weight: bold; margin-top: 20px; text-indent: 0;">
+                Salah satu contoh menu makanan sehat dan bergizi seimbang adalah:
+            </p>
+
+            <ol class="list-menu">
+                <li>
+                    <b>Nasi Putih</b>
+                    <ul>
+                        <li><b>Kandungan utama:</b> Karbohidrat, protein, zat besi, magnesium.</li>
+                        <li><b>Fungsi:</b> 
+                            <br>- Sumber energi utama bagi tubuh, terutama untuk otak.
+                            <br>- Magnesium membantu membentuk tulang.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Bayam</b>
+                    <ul>
+                        <li><b>Kandungan utama:</b> Protein, serat, vitamin A, C, K, antioksidan.</li>
+                        <li><b>Fungsi:</b>
+                            <br>- Antioksidan menangkal radikal bebas dan mengatasi peradangan.
+                            <br>- Vitamin A dan C meningkatkan sistem kekebalan tubuh.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Tahu</b>
+                    <ul>
+                        <li><b>Kandungan utama:</b> Protein nabati, kalsium, fosfor, zat besi, isoflavon.</li>
+                        <li><b>Fungsi:</b>
+                            <br>- Protein membantu membangun dan memperbaiki jaringan tubuh.
+                            <br>- Kalsium dan fosfor menjaga kesehatan tulang dan gigi.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Tempe</b>
+                    <ul>
+                        <li><b>Kandungan utama:</b> Protein nabati lengkap, serat, kalsium, isoflavon, probiotik.</li>
+                        <li><b>Fungsi:</b>
+                            <br>- Protein mendukung pertumbuhan dan perbaikan jaringan.
+                            <br>- Probiotik baik untuk kesehatan usus.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Ayam</b>
+                    <ul>
+                        <li><b>Kandungan utama:</b> Protein berkualitas tinggi, vitamin B6, B3, selenium, fosfor.</li>
+                        <li><b>Fungsi:</b>
+                            <br>- Protein membantu membangun otot dan memperbaiki jaringan.
+                            <br>- Vitamin B6 dan B3 mendukung metabolisme dan fungsi saraf serta kulit.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Mangga</b>
+                    <ul>
+                        <li><b>Kandungan utama:</b> Karbohidrat, serat, vitamin A, C, antioksidan (mangiferin, beta karoten).</li>
+                        <li><b>Fungsi:</b>
+                            <br>- Vitamin C meningkatkan daya tahan tubuh dan mempercepat penyembuhan luka.
+                            <br>- Vitamin A dan beta karoten menjaga kesehatan mata.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Jeruk</b>
+                    <ul>
+                        <li><b>Kandungan utama:</b> Vitamin C, flavonoid (hesperidin), serat, kalium.</li>
+                        <li><b>Fungsi:</b>
+                            <br>- Vitamin C meningkatkan sistem kekebalan tubuh dan melindungi sel.
+                            <br>- Flavonoid menjaga kesehatan jantung dan menurunkan tekanan darah.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <b>Air Putih</b>
+                    <ul>
+                        <li><b>Kandungan utama:</b> Air murni, bisa mengandung sedikit mineral tergantung sumbernya.</li>
+                        <li><b>Fungsi:</b>
+                            <br>- Mengatur suhu tubuh.
+                            <br>- Membantu pencernaan dan mencegah sembelit.
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+
+            <p>
+                Oleh karena itu, pola makan sehat dan bergizi seimbang sangatlah penting bagi kesehatan remaja. 
+                Dengan meningkatkan konsumsi sayur, buah-buahan, dan makanan bergizi lainnya, remaja dapat memperoleh manfaat yang optimal untuk pertumbuhan, perkembangan, dan pencegahan penyakit. 
+                Edukasi yang berkelanjutan, kemudahan akses terhadap makanan sehat, serta dukungan dari keluarga dan lingkungan sekitar sangat diperlukan untuk membentuk kebiasaan makan yang baik sejak dini. 
+                Mari kita dorong remaja Indonesia untuk menerapkan pola makan yang bergizi, berimbang, sehat, dan aman demi mewujudkan generasi yang sehat, kuat, dan produktif.
+            </p>
+            
+            <br>
+            <p style="text-align: center; font-weight: bold; text-indent: 0;">--- Selesai ---</p>
+        </div>
+    </div>
+
+    <div id="presentasi" class="hidden section-presentasi">
+        <header>
+            <h1>Galeri Gizi</h1>
+            <p>Klik gambar makanan untuk melihat detailnya!</p>
+        </header>
+        
+        <nav class="pres-nav">
+            <a href="#galeri-makanan">Menu Makanan</a>
+            <a href="#info">Info Penting</a>
+        </nav>
+        
+        <section id="galeri-makanan">
+            <h2>Daftar Menu Makanan</h2>
+            <div class="food-grid">
+                <button onclick="openFoodModal('nasi')" class="food-card">
+                    <img src="img/nasi.jpg" alt="Nasi">
+                    <span>Nasi Putih</span>
+                </button>
+                <button onclick="openFoodModal('bayam')" class="food-card">
+                    <img src="img/bayam.jpg" alt="Bayam">
+                    <span>Sayur Bayam</span>
+                </button>
+                <button onclick="openFoodModal('tahu')" class="food-card">
+                    <img src="img/tahu.jpg" alt="Tahu">
+                    <span>Tahu</span>
+                </button>
+                <button onclick="openFoodModal('tempe')" class="food-card">
+                    <img src="img/tempe.webp" alt="Tempe">
+                    <span>Tempe</span>
+                </button>
+                <button onclick="openFoodModal('ayam')" class="food-card">
+                    <img src="img/ayam.jpg" alt="Ayam">
+                    <span>Ayam Serundeng</span>
+                </button>
+                <button onclick="openFoodModal('mangga')" class="food-card">
+                    <img src="img/mangga.jpg" alt="Mangga">
+                    <span>Buah Mangga</span>
+                </button>
+                <button onclick="openFoodModal('jeruk')" class="food-card">
+                    <img src="img/jeruk.jpg" alt="Jeruk">
+                    <span>Buah Jeruk</span>
+                </button>
+                <button onclick="openFoodModal('air')" class="food-card">
+                    <img src="img/air.jpg" alt="Air Putih">
+                    <span>Air Putih</span>
+                </button>
+            </div>
+        </section>
+
+        <div id="food-modal-overlay" class="modal-overlay hidden" onclick="closeFoodModal()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close-btn" onclick="closeFoodModal()">&times;</span>
+                <h2 id="modal-title">Nama Makanan</h2>
+                <div id="modal-body">
+                    </div>
+            </div>
+        </div>
+        
+        <section id="info">
+            <h2>Pesan Kesehatan</h2>
+            <p>Jangan asal kenyang! Pastikan piringmu terdiri dari Makanan Pokok, Lauk Pauk, Sayuran, dan Buah-buahan.</p>
+        </section>
+        
+        <footer><p>© 2026 Bukan Asal Kenyang</p></footer>
+    </div>
+
+    <div id="kalkulator" class="container hidden section-kalkulator">
+        <h2>Kalkulator</h2>
+        <div class="calc-wrapper">
+            <input type="text" id="calc-display" readonly>
+            <div class="calc-keys">
+                <button onclick="appendCalc('+')" class="operator">+</button>
+                <button onclick="appendCalc('7')">7</button>
+                <button onclick="appendCalc('8')">8</button>
+                <button onclick="appendCalc('9')">9</button>
+                <button onclick="appendCalc('-')" class="operator">-</button>
+                <button onclick="appendCalc('4')">4</button>
+                <button onclick="appendCalc('5')">5</button>
+                <button onclick="appendCalc('6')">6</button>
+                <button onclick="appendCalc('*')" class="operator">×</button>
+                <button onclick="appendCalc('1')">1</button>
+                <button onclick="appendCalc('2')">2</button>
+                <button onclick="appendCalc('3')">3</button>
+                <button onclick="appendCalc('/')" class="operator">÷</button>
+                <button onclick="appendCalc('0')">0</button>
+                <button onclick="clearCalc()" class="clear">C</button>
+                <button onclick="calculate()" class="equal">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
